@@ -1,3 +1,3 @@
-# Rails boilerplate
+# Apurate, Jose
 
-Boilerplate para una aplicación Rails 3.2
+Hackathon 2013
