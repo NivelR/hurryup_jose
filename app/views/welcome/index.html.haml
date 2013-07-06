@@ -6,7 +6,7 @@
   %br
   - if @altura.todo_ok?
     %div{class: 'alert alert-success'}
-      .span1
+      .span1.alert-icon
         %i{class: 'icon-thumbs-up icon-3x'} 
       En este momento todo esta tranquilo cerca de tu ubicación. 
       %br
@@ -14,25 +14,28 @@
 
   - elsif @altura.alerta?
     %div{class: 'alert alert-block'}
-      .span1
-        %i{class: 'icon-warning-sign icon-3x'} 
-      Estamos en un momento de alerta con
-      = @altura.diferencia_alerta
-      metros por encima del límite de alerta. 
-      %br
-      Estate atento a las crecientes del río.
+      .span1.alert-icon
+        %i{class: 'icon-warning-sign icon-3x'}
+
+      %h2
+        Estamos en un momento de alerta con
+        = @altura.diferencia_alerta
+        metros por encima del límite de alerta.
+        %br
+        Estate atento a las crecientes del río.
   - elsif @altura.evacuacion?
     %div{class: 'alert alert-error'}
-      .span1
-        %i{class: 'icon-warning-sign icon-3x'} 
-      Estamos en un momento crítico, con
-      = @altura.diferencia_evacuacion 
-      metros por encima del limite de evacuación.
-      %br
-      Apúrate José que se esta viniendo la creciente otra vez!.
+      .span1.alert-icon
+        %i{class: 'icon-warning-sign icon-3x'}
+      %h2
+        Estamos en un momento crítico, con
+        = @altura.diferencia_evacuacion
+        metros por encima del limite de evacuación.
+        %br
+        Apúrate José que se esta viniendo la creciente otra vez!.
 
 
-  %h5
+  %h3
     Detalle
 
   %table{class: 'table'}
@@ -56,7 +59,7 @@
       %td= @puerto.altura_evacuacion
 
 
-  %h5 Históricos
+  %h3 Históricos
   %ul{class: 'nav nav-tabs'}
     %li{class: 'active'}
       %a{href: '#semana',"data-toggle"=>'tab'}
@@ -69,7 +72,7 @@
 
   .tab-content
     #semana{class: "tab-pane active"}
-      %table{class: 'table span4'}
+      %table{class: 'table'}
         %tr
           %th Fecha
           %th Medición (Mts.)

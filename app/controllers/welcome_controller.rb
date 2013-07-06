@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
 
-  	@puerto = Puerto.where("nombre ilike ?", request.subdomain).first
+  	@puerto = Puerto.where("nombre ilike ?", request.subdomain).first || Puerto.where(nombre: "CORRIENTES").first
 
     if @puerto
       @rio    = @puerto.rio
