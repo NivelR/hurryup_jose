@@ -2,6 +2,8 @@ class Altura < ActiveRecord::Base
   attr_accessible :fecha, :medicion, :puerto_id
   belongs_to :puerto
 
+  validates :puerto_id, :uniqueness => {:scope => :fecha}
+
   scope :por_fecha, order('fecha DESC')
 
   scope :semana, por_fecha.first(7)

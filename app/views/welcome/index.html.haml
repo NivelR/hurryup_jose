@@ -83,10 +83,10 @@
             %td= sem.actualizacion
             %td= sem.medicion
             - if i != 0
-              - variacion = sem.medicion - @semana[i-1].medicion
+              - variacion = @semana[i-1].medicion - sem.medicion
             - else
               - variacion = 0
-            %td= variacion.round(2)
+            %td= "#{variacion > 0 ? "+" : ""} #{variacion.round(2)}"
 - else
   %h1 No se encontraron datos para ese puerto
 

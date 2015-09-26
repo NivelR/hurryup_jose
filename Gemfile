@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'mechanize'
 gem 'rabl'
+gem 'watir'
 
 group :assets do
   gem 'therubyracer'
